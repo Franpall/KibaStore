@@ -6,37 +6,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KibaStore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet">
+    <!-- separacion de fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>KibaStore</h1>
-        {% if usuario_logueado == True %}
-        <button>Mi Carrito</button>
-        <button></button>
+        {% if usuario_logeado %}
+        <div class="right_header">
+            <button class="btn_comprar">Mi Carrito</button>
+            <button class="logout_button"><img src="{{ url_for('static', filename='iconos/logout.svg') }}" alt="BACK"></button>
+        </div>
         {% else %}
-        <button>Iniciar Sesión</button>
+        <div class="right_header">
+            <button class="boton">Iniciar Sesión</button>
+        </div>
         {% endif %}
     </header>
     <main>
         <article id="area_destacada">
-            <h2>¡Nuestros Mejores Productos!</h2>
-            {% for producto in productos %}
-            <div class="producto">
-                <div>
-                <img src="" alt="">
-                <div></div>
+            <h2>¡Ofertas de la Semana!</h2>
+            <section id="seccion_productos">
+                {% for producto in productos %}
+                <div class="producto">
+                    <div class="area_imagen">
+                    <img src="" alt="">
+                    <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
+                    </div>
+                    <h3>{{ producto["nombre"] }}</h3>
+                    <p class="precio">{{ producto["precio"] }}</p>
+                    <button class="btn_comprar">Agregar al carrito</button>
                 </div>
-                <h3>{{ producto["nombre"] }}</h3>
-                <p class="precio">{{ producto["precio"] }}</p>
-                <button class="btn_comprar">Agregar al carrito</button>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            </section>
         </article>
         <article id="area_general">
-            <h2>¡Nuestros Mejores Productos!</h2>
+            <h2>¡Todos los Modelos!</h2>
             {% for producto in productos %}
             <div class="producto">
-                <div>
+                <div class="area_imagen">
                 <img src="" alt="">
                 <div></div>
                 </div>
