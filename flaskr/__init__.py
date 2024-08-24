@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -24,9 +24,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+    # a simple page that says Hola Insanos :v
+    @app.route('/')
+    def inicio():
+        return render_template('blog/inicio.html')
 
     return app
