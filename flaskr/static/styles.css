@@ -1,0 +1,189 @@
+/* Area de AJustes Generales */
+
+*{
+    margin:0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+:root{
+    --fondo:rgb(255, 244, 244);
+    --tarjeta:rgb(243, 247, 212);
+    --acento:rgb(228, 113, 6);
+    --boton:rgb(155, 53, 13);
+    --botonHover:rgb(196, 73, 17);
+    --texto:black;
+    --textoInverso:white;
+}
+
+/* Area de HEADER */
+
+header{
+    height: 70px;
+    width: 100%;
+    background-color: var(--acento);
+    color:var(--textoInverso);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-weight: 400;
+    font-family: "Anek Devanagari", sans-serif;
+    font-style: light;
+}
+
+.right_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logout_button{
+    width: 1.2em;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    border: solid 1px white;
+    background-color: var(--boton);
+    color: var(--textoInverso);
+}
+
+.logout_button:hover{
+    background-color: var(--botonHover);
+    cursor: pointer;
+}
+
+.logout_button img{
+    width: 1.2em;
+    aspect-ratio: 1/1;
+}
+
+.boton{
+    background-color: var(--boton);
+    color: var(--textoInverso);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border: solid 1px white;
+}
+
+.boton:hover{
+    background-color: var(--botonHover);
+    cursor: pointer;
+}
+
+.btn_comprar{
+    background-color: var(--boton);
+    color: var(--textoInverso);
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border: solid 1px white;   
+}
+
+.btn_comprar:hover{
+    background-color: var(--botonHover);
+    cursor: pointer;
+}
+
+
+/* Area de main */
+main{
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* Area de destacados */
+
+#area_destacada{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#seccion_productos{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo de tarjetas */
+
+.producto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    width: 200px;
+    background-color: var(--tarjeta);
+    border-radius: 20px;
+    padding: 10px 0;
+    box-shadow: black 1px 1px 5px;
+}
+
+.area_imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    gap: 5%;
+}
+
+.area_imagen img{
+    background-color: rgb(99, 156, 173);
+    border-radius: 10px;
+    width: 70%;
+    aspect-ratio: 1/1;
+}
+
+.area_imagen button{
+    width: 25%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.area_imagen button img{
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.precio{
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.precio::after{
+    content: "$";
+}
