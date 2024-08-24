@@ -1,4 +1,5 @@
 <!-- html para la pantalla de inicio del e-commerce -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,11 +10,11 @@
 <body>
     <header>
         <h1>KibaStore</h1>
-        {% if usuario_logueado %}
-        <button>Iniciar Sesión</button>
-        {% else %}
+        {% if usuario_logueado == True %}
         <button>Mi Carrito</button>
         <button></button>
+        {% else %}
+        <button>Iniciar Sesión</button>
         {% endif %}
     </header>
     <main>
