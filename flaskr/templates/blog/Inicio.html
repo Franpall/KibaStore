@@ -1,11 +1,53 @@
 <!-- html para la pantalla de inicio del e-commerce -->
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>Kiba Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KibaStore</title>
 </head>
 <body>
-    <h1>Hola Insanos</h1>
+    <header>
+        <h1>KibaStore</h1>
+        {% if usuario_logueado %}
+        <button>Iniciar Sesión</button>
+        {% else %}
+        <button>Mi Carrito</button>
+        <button></button>
+        {% endif %}
+    </header>
+    <main>
+        <article id="area_destacada">
+            <h2>¡Nuestros Mejores Productos!</h2>
+            {% for producto in productos %}
+            <div class="producto">
+                <div>
+                <img src="" alt="">
+                <div></div>
+                </div>
+                <h3>{{ producto["nombre"] }}</h3>
+                <p class="precio">{{ producto["precio"] }}</p>
+                <button class="btn_comprar">Agregar al carrito</button>
+            </div>
+            {% endfor %}
+        </article>
+        <article id="area_general">
+            <h2>¡Nuestros Mejores Productos!</h2>
+            {% for producto in productos %}
+            <div class="producto">
+                <div>
+                <img src="" alt="">
+                <div></div>
+                </div>
+                <h3></h3>
+                <p class="precio"></p>
+                <button class="btn_comprar">Agregar al carrito</button>
+            </div>
+            {% endfor %}
+        </article>
+    </main>
+    <footer>
+        <p>KibaStore - Todos los Derechos Reservados 2024</p>
+    </footer>
 </body>
 </html>
