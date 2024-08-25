@@ -110,11 +110,15 @@ main{
 /* Area de destacados */
 
 #area_destacada{
-    margin: 20px;
+    margin: 10px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 10px;
+    background: linear-gradient(120deg,rgb(238, 235, 232) 30%, rgb(250, 241, 241) 50%, rgb(238, 235, 232) 70% );
 }
 
 h2{
@@ -186,4 +190,14 @@ h2{
 
 .precio::after{
     content: "$";
+}
+
+/* area general */
+
+#area_general{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
