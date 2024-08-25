@@ -93,6 +93,7 @@ h1{
     font-size: 1em;
     padding: 5px 10px;
     border: solid 1px white;   
+    text-decoration: none;
 }
 
 .btn_comprar:hover{
@@ -116,8 +117,6 @@ main{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 2px 2px 5px black;
-    border-radius: 10px;
 }
 
 h2{
@@ -214,4 +213,119 @@ footer{
 
 footer p{
     text-align: center;
+}
+
+/* Area de carrito de compra */
+
+#area_carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+#carrito{
+    background-color: var(--tarjeta);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    height: 80px;
+    border: solid 1px black;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+.item .area_imagen{
+    width: 30%;
+}
+
+.item .area_imagen img{
+    width: 60px;
+    aspect-ratio: 1/1;
+}
+
+.btn_eliminar{
+    background-color: var(--boton);
+    color: var(--textoInverso);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border: solid 1px white;
+}
+
+.btn_eliminar:hover{
+    background-color: red;
+    cursor: pointer;
+}
+
+.btn_verMas{
+    background-color: var(--boton);
+    border-radius: 10px;
+    border: white 1px solid;
+    max-width: 40px;
+}
+
+.btn_verMas img{
+    height: 20px;
+    width: 20px;
+}
+
+.btn_verMas:hover{
+    background-color: var(--botonHover);
+    cursor: pointer;
+}
+
+.area_datos{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cantidad::before{
+    content: "x";
+    color: rgb(155, 35, 14) ;
+    font-size: 1.2rem;
+}
+
+.area_comprar{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 90%;
+    margin: 0 auto;
+    height: 100px;
+}
+
+.btn_completar{
+    background-color: rgb(23, 119, 36);
+    border-radius: 30px 20px 30px 20px;
+    color: var(--textoInverso);
+    padding: 10px 10px;
+    font-size: 1.3rem;
+    border: none;
+    box-shadow: 1px 1px 5px black;
+}
+
+.btn_completar:hover{
+    border-radius: 20px 30px 20px 30px;
+    background-color: rgb(50, 179, 11);
+    transition: all 500ms ease-in;
+    cursor: pointer;
 }
