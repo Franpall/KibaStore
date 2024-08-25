@@ -1,15 +1,40 @@
-{% extends 'base.html' %}
-
-{% block header %}
-  <h1>{% block title %}Log In{% endblock %}</h1>
-{% endblock %}
-
-{% block content %}
-  <form method="post">
-    <label for="username">Username</label>
-    <input name="username" id="username" required>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" required>
-    <input type="submit" value="Log In">
-  </form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KibaStore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet">
+    <!-- separacion de fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+      <h1>KibaStore</h1>
+      <div class="right_header">
+        <a class="btn_login" href="{{ url_for('index') }}">Inicio</a>
+      </div>
+  </header>
+  <main>
+    <div id="inicioSesion">
+      <h2>Iniciar Sesión</h2>
+      <form method="post">
+        <label for="username">Usuario</label>
+        <input name="username" id="username" required>
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" required>
+        <input type="submit" value="Iniciar Sesión" class="boton">
+      </form>
+      <a href="">No tengo Cuenta</a>
+    </div>
+  </main>
+  <footer>
+      <p>KibaStore - Todos los Derechos Reservados 2024</p>
+  </footer>
+</body>
+</html>
