@@ -118,7 +118,6 @@ main{
     flex-direction: column;
     box-shadow: 2px 2px 5px black;
     border-radius: 10px;
-    background: linear-gradient(120deg,rgb(238, 235, 232) 30%, rgb(250, 241, 241) 50%, rgb(238, 235, 232) 70% );
 }
 
 h2{
