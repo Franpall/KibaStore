@@ -48,17 +48,19 @@
         </article>
         <article id="area_general">
             <h2>¡Todos los Modelos!</h2>
-            {% for producto in productos %}
-            <div class="producto">
-                <div class="area_imagen">
-                <img src="" alt="">
-                <div></div>
+            <section id="seccion_productos">
+                {% for producto in productos %}
+                <div class="producto">
+                    <div class="area_imagen">
+                    <img src="" alt="">
+                    <div></div>
+                    </div>
+                    <h3>{{ producto["nombre"] }}</h3>
+                    <p class="precio">{{ producto["precio"] }}</p>
+                    <button class="btn_comprar">Agregar al carrito</button>
                 </div>
-                <h3>{{ producto["nombre"] }}</h3>
-                <p class="precio">{{ producto["precio"] }}</p>
-                <button class="btn_comprar">Agregar al carrito</button>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            </section>
         </article>
     </main>
     <footer>
