@@ -201,3 +201,18 @@ h2{
     align-items: center;
     flex-direction: column;
 }
+
+/* pié de página */
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--texto);
+    color: var(--textoInverso);
+    padding: 10px;
+}
+
+footer p{
+    text-align: center;
+}
