@@ -85,6 +85,23 @@ h1{
     cursor: pointer;
 }
 
+.btn_login{
+    background-color: var(--boton);
+    color: var(--textoInverso);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.2em;
+    padding: 5px 10px;
+    border: solid 1px white;
+    margin-right: 20px; 
+    text-decoration: none;
+}
+
+.btn_login:hover{
+    background-color: var(--botonHover);
+    cursor: pointer;
+}
+
 .btn_comprar{
     background-color: var(--boton);
     color: var(--textoInverso);
@@ -328,4 +345,44 @@ footer p{
     background-color: rgb(50, 179, 11);
     transition: all 500ms ease-in;
     cursor: pointer;
+}
+
+/* Area de inicio de sesión */
+
+#inicioSesion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#inicioSesion h2{
+    margin-top: 30px;
+}
+
+form{
+    background-color: var(--tarjeta);
+    margin: 20px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+}
+
+input{
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px black;
+    margin-top:-5px;
+    margin-bottom: 10px;
+}
+
+main{
+    min-height: 100vh;
 }
