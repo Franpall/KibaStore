@@ -20,7 +20,7 @@
         <h1>KibaStore</h1>
         {% if usuario_logeado %}
         <div class="right_header">
-            <button class="btn_comprar">Mi Carrito</button>
+            <a class="btn_comprar" href="{{ url_for('cart') }}">Mi carrito</a>
             <button class="logout_button"><img src="{{ url_for('static', filename='iconos/logout.svg') }}" alt="BACK"></button>
         </div>
         {% else %}
@@ -53,7 +53,7 @@
                 <div class="producto">
                     <div class="area_imagen">
                     <img src="" alt="">
-                    <div></div>
+                    <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
                     </div>
                     <h3>{{ producto["nombre"] }}</h3>
                     <p class="precio">{{ producto["precio"] }}</p>

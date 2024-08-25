@@ -1,1 +1,54 @@
 <!-- contenido del carrito del usuario -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KibaStore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet">
+    <!-- separacion de fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>KibaStore</h1>
+        <div class="right_header">
+            <a class="btn_comprar" href="{{ url_for('index') }}">Inicio</a>
+            <button class="logout_button"><img src="{{ url_for('static', filename='iconos/logout.svg') }}" alt="BACK"></button>
+        </div>
+    </header>
+    <main>
+        <article id="area_carrito">
+            <h2>Wow, tu carrito se ve muy bien!</h2>
+            <section id="carrito">
+                {% for item in items %}
+                <div class="item">
+                    <div class="area_imagen">
+                    <img src="" alt="">
+                    <button class="btn_verMas"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
+                    </div>
+                    <div class="area_datos">
+                        <h3>{{ item["nombre"] }}</h3>
+                        <p class="precio">{{ item["precio"] }}</p>
+                        <p class="cantidad">{{ item["cantidad"] }}</p>
+                        <button class="btn_eliminar">Eliminar</button>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="area_comprar">
+                    <button class="btn_completar">Completar Compra</button>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>KibaStore - Todos los Derechos Reservados 2024</p>
+    </footer>
+</body>
+</html>
