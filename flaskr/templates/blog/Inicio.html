@@ -36,7 +36,7 @@
                 {% for producto in productos %}
                 <div class="producto">
                     <div class="area_imagen">
-                    <img src="" alt="">
+                    <img src="{{ url_for('static', filename='img_productos/redmi10.png') }}" alt="">
                     <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
                     </div>
                     <h3>{{ producto["nombre"] }}</h3>
@@ -52,7 +52,7 @@
                 {% for producto in productos %}
                 <div class="producto">
                     <div class="area_imagen">
-                    <img src="" alt="">
+                    <img src="{{ url_for('static', filename='img_productos/redmi10.png') }}" alt="">
                     <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
                     </div>
                     <h3>{{ producto["nombre"] }}</h3>
