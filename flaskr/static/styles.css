@@ -410,3 +410,37 @@ main{
     color: var(--acento);
     font-size: 1.2rem;
 }
+
+/* Area del Formulario ProductosView*/
+main{
+    min-height: 100vh;
+}
+
+.btn_change{
+    color: var(--acento);
+    font-size: 1.2rem;
+}
+
+.titulo_Formulario{
+    font-weight: 600;
+    margin: 3%;
+    padding: auto;
+    text-align: center;
+}
+
+.btn_formulario{
+    color: #BEFEEB;
+    background-color: #009933;
+    border-radius: 20px;
+    padding: 10px 25px;
+    border: 2px solid white;
+
+}
+
+label{
+    font-weight: 700;
+}
+
+.btn_cancelar_form{
+    text-decoration: none;
+}
