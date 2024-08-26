@@ -20,7 +20,7 @@
         <h1>KibaStore</h1>
         <div class="right_header">
             <a class="btn_comprar" href="{{ url_for('index') }}">Inicio</a>
-            <button class="logout_button"><img src="{{ url_for('static', filename='iconos/logout.svg') }}" alt="BACK"></button>
+            <a href="{{ url_for('cerrarSesion') }}" class="logout_button"><img src="{{ url_for('static', filename='iconos/logout.svg') }}" alt="BACK"></a>
         </div>
     </header>
     <main>
