@@ -1,6 +1,7 @@
 import os
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flaskr.dbConexion import *
 
 
 def create_app(test_config=None):
@@ -25,8 +26,47 @@ def create_app(test_config=None):
         pass
 
     # a simple page that says Hola Insanos :v
-    @app.route('/')
-    def inicio():
-        return render_template('blog/inicio.html')
+
+    app = Flask(__name__)
+
+    @app.route("/")
+    def index():
+        usuario_logeado = False
+        productos = [{"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}, {"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}]
+        return render_template('blog/Inicio.html', usuario_logeado=usuario_logeado, productos=productos)
+
+    @app.route("/carrito")
+    def cart():
+        usuario_logeado = True
+        productos = [{"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}, {"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}]
+        return render_template('blog/carrito.html', usuario_logeado=usuario_logeado, items=productos)
+
+    @app.route("/login")
+    def iniciarSesion():
+        return render_template('auth/login.html')
+
+    @app.route("/register")
+    def registrar():
+        return render_template('auth/register.html')
+    
+    # Lógica para el registro
+    @app.route('/registerSolicitud', methods=('GET', 'POST'))
+    def registerSolicitud():
+        if request.method == 'POST':
+            usuario = request.form['username']
+            contraseña = request.form['password']
+            print(usuario, contraseña) #aca están los datos recibidos bro
+
+            registrar_cliente(usuario, contraseña, 1)
+            mensaje = "Cuenta Creada Con Éxito, ahora Inicia Sesión"
+            return render_template('auth/login.html', mensaje = mensaje)
+        
+
+    @app.route("/productos_admin")
+    def formProductos():
+        return render_template('blog/productosView.html')
+
+    if __name__ == '__main__':
+        app.run(debug=True)
 
     return app
