@@ -29,7 +29,7 @@
 
     <div id="inicioSesion">
       <h2>Iniciar Sesión</h2>
-      <form method="post">
+      <form action="{{ url_for('loginSolicitud') }}" method="post">
         <label for="username">Usuario</label>
         <input name="username" id="username" required>
         <label for="password">Contraseña</label>
