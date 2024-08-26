@@ -7,14 +7,28 @@
     font-style: normal;
 }
 
+/* :root{
+    --fondo:rgb(0, 0, 0);
+    --tarjeta:rgb(46, 46, 46) ;
+    --acento:rgb(18, 148, 116);
+    --boton:rgb(8, 94, 51);
+    --botonHover:rgb(0, 156, 78);
+    --texto:rgb(255, 255, 255);
+    --textoInverso:rgb(0, 0, 0);
+} */
+
 :root{
-    --fondo:rgb(255, 244, 244);
-    --tarjeta:rgb(243, 247, 212);
-    --acento:rgb(228, 113, 6);
-    --boton:rgb(155, 53, 13);
-    --botonHover:rgb(196, 73, 17);
-    --texto:black;
-    --textoInverso:white;
+    --fondo:#BEFEEB;
+    --tarjeta:#F2FFFC;
+    --acento:#018C26;
+    --boton:#099F50;
+    --botonHover:#06BF43;
+    --texto:rgb(0, 0, 0);
+    --textoInverso:rgb(255, 255, 255);
+}
+
+body{
+    background-color: var(--fondo);
 }
 
 /* Area de HEADER */
@@ -35,6 +49,7 @@ h1{
     font-weight: 400;
     font-family: "Anek Devanagari", sans-serif;
     font-style: light;
+    color: white;
 }
 
 .right_header{
@@ -57,7 +72,7 @@ h1{
     font-size: 1.2em;
     border: solid 1px white;
     background-color: var(--boton);
-    color: var(--textoInverso);
+    color: white;
 }
 
 .logout_button:hover{
@@ -72,7 +87,7 @@ h1{
 
 .boton{
     background-color: var(--boton);
-    color: var(--textoInverso);
+    color: white;
     border-radius: 10px;
     border: none;
     font-size: 1.2em;
@@ -87,7 +102,7 @@ h1{
 
 .btn_login{
     background-color: var(--boton);
-    color: var(--textoInverso);
+    color: white;
     border-radius: 10px;
     border: none;
     font-size: 1.2em;
@@ -104,7 +119,7 @@ h1{
 
 .btn_comprar{
     background-color: var(--boton);
-    color: var(--textoInverso);
+    color: white;
     border-radius: 10px;
     border: none;
     font-size: 1em;
@@ -139,6 +154,7 @@ main{
 h2{
     font-size: 2rem;
     margin-bottom: 10px;
+    color: var(--texto);
 }
 
 #seccion_productos{
@@ -159,11 +175,12 @@ h2{
     align-items: center;
     flex-direction: column;
     gap: 5px;
-    width: 200px;
+    width: 250px;
     background-color: var(--tarjeta);
     border-radius: 20px;
     padding: 10px 0;
     box-shadow: black 1px 1px 5px;
+    color: var(--texto);
 }
 
 .area_imagen{
@@ -172,18 +189,18 @@ h2{
     justify-content: center;
     width: 90%;
     margin: 0 auto;
-    gap: 5%;
+    gap: 4%;
 }
 
 .area_imagen img{
-    background-color: rgb(99, 156, 173);
+    background-color: rgb(243, 252, 255);
     border-radius: 10px;
-    width: 70%;
+    width: 80%;
     aspect-ratio: 1/1;
 }
 
 .area_imagen button{
-    width: 25%;
+    width: 16%;
     aspect-ratio: 1/1;
     display: flex;
     align-items: center;
@@ -191,7 +208,7 @@ h2{
 }
 
 .area_imagen button img{
-    width: 100%;
+    width: 150%;
     aspect-ratio: 1/1;
     background-color: transparent;
     border-radius: 0;
@@ -262,9 +279,8 @@ footer p{
     justify-content: space-around;
     width: 80%;
     height: 80px;
-    border: solid 1px black;
+    border-bottom: solid 1px var(--texto);
     gap: 20px;
-    border-radius: 20px;
 }
 
 .item .area_imagen{
@@ -278,7 +294,7 @@ footer p{
 
 .btn_eliminar{
     background-color: var(--boton);
-    color: var(--textoInverso);
+    color: white;
     border-radius: 10px;
     border: none;
     font-size: 1.2em;
@@ -287,7 +303,7 @@ footer p{
 }
 
 .btn_eliminar:hover{
-    background-color: red;
+    background-color: rgb(185, 39, 39);
     cursor: pointer;
 }
 
@@ -313,11 +329,12 @@ footer p{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    color: var(--texto);
 }
 
 .cantidad::before{
     content: "x";
-    color: rgb(155, 35, 14) ;
+    color: var(--acento);
     font-size: 1.2rem;
 }
 
@@ -331,9 +348,9 @@ footer p{
 }
 
 .btn_completar{
-    background-color: rgb(23, 119, 36);
+    background-color: var(--boton);
     border-radius: 30px 20px 30px 20px;
-    color: var(--textoInverso);
+    color: white;
     padding: 10px 10px;
     font-size: 1.3rem;
     border: none;
@@ -365,24 +382,31 @@ footer p{
 form{
     background-color: var(--tarjeta);
     margin: 20px;
-    padding: 20px 30px;
+    padding: 40px 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap:10px;
+    gap:25px;
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
+    color: var(--texto);
 }
 
 input{
     padding: 5px;
     border-radius: 10px;
     border: solid 1px black;
-    margin-top:-5px;
+    margin-top:-15px;
     margin-bottom: 10px;
+    width: 300px;
 }
 
 main{
     min-height: 100vh;
+}
+
+.btn_change{
+    color: var(--acento);
+    font-size: 1.2rem;
 }
