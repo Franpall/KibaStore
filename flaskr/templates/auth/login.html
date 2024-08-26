@@ -21,6 +21,12 @@
       </div>
   </header>
   <main>
+    {% if mensaje %}
+    <div id="notificacion">
+      <p>{{ mensaje }}</p>
+    </div>
+    {% endif %}
+
     <div id="inicioSesion">
       <h2>Iniciar Sesión</h2>
       <form method="post">

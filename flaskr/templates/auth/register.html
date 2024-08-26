@@ -23,7 +23,7 @@
   <main>
     <div id="inicioSesion">
       <h2>Registrarse</h2>
-      <form method="post">
+      <form action="{{ url_for('registerSolicitud') }}" method="post">
         <label for="username">Usuario</label>
         <input name="username" id="username" required>
         <label for="password">Contraseña</label>
