@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KibaStore</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>KibaStore</h1>
+        <div>
+            <a class="btn_comprar" href="{{ url_for('index') }}" >Inicio</a>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="titulo_Formulario">Nuevo Producto</h2>
+    <form>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="nombre">Precio:</label>
+        <input type="text" id="precio" name="precio">
+
+        <label for="nombre">Cantidad Disponeble:</label>
+        <input type="text" id="can_dispo" name="can_dispo">
+
+        <button class="btn_formulario" type="submit">Agregar Producto</button>
+        <a class="btn_cancelar_form" href="{{ url_for('index') }}">Cancelar</a>
+    </form>
+
+    </main>
+    <footer>
+        <p>KibaStore - Todos los Derechos Reservados 2024</p>
+    </footer>
+</body>
+</html>
