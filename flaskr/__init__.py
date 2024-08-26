@@ -30,10 +30,9 @@ def create_app(test_config=None):
     app = Flask(__name__)
 
     @app.route("/")
-    def index():
-        usuario_logeado = False
+    def index(sesion=0):
         productos = [{"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}, {"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}]
-        return render_template('blog/Inicio.html', usuario_logeado=usuario_logeado, productos=productos)
+        return render_template('blog/Inicio.html', usuario_logeado=sesion, productos=productos)
 
     @app.route("/carrito")
     def cart():
@@ -44,6 +43,27 @@ def create_app(test_config=None):
     @app.route("/login")
     def iniciarSesion():
         return render_template('auth/login.html')
+    
+    # Lógica para el inicio de sesion
+
+    @app.route("/loginSolicitud", methods=('GET', 'POST'))
+    def loginSolicitud():
+        print("confirmado")
+        if request.method == 'POST':
+            usuario = request.form['username']
+            contraseña = request.form['password']
+            print(usuario, contraseña) #aca están los datos recibidos bro
+            resultado = iniciar_sesionBD(usuario, contraseña)
+            print(resultado)
+            if resultado == 1:
+                sesion = True
+                return index(sesion)
+            elif resultado == 2:
+                return formProductos()
+            else:
+                mensaje = "Usuario o Contraseña Incorrecta!"
+                return render_template('auth/login.html', mensaje = mensaje)
+
 
     @app.route("/register")
     def registrar():
@@ -65,6 +85,11 @@ def create_app(test_config=None):
     @app.route("/productos_admin")
     def formProductos():
         return render_template('blog/productosView.html')
+    
+    @app.route("/bye")
+    def cerrarSesion():
+        sesion = False
+        return index(sesion)
 
     if __name__ == '__main__':
         app.run(debug=True)

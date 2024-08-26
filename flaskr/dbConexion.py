@@ -43,6 +43,19 @@ def eliminar_producto(id_producto):
     conn.commit()
     conn.close()
 
+# eliminar_producto() #Inserte el fokin id del producto en la funcion
+
+
+# Area de Login
+def iniciar_sesionBD(usuario, contraseña):
+    conn = sqlite3.connect('flaskr/KibaStore.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT rol FROM cuentas WHERE usuario=? AND contraseña=?', (usuario, contraseña))
+    resultado = cursor.fetchone()
+    if resultado:
+        resultado, = resultado
+        return resultado
+
 # Area de Registro
 def registrar_cliente(usuario, contraseña, rol):
     conn = sqlite3.connect('flaskr/KibaStore.db')
@@ -55,5 +68,5 @@ def registrar_cliente(usuario, contraseña, rol):
     conn.commit()
     conn.close()
 
-# eliminar_producto() #Inserte el fokin id del producto en la funcion
+
 
