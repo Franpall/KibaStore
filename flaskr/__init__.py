@@ -25,14 +25,11 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says Hola Insanos :v
-
     app = Flask(__name__)
 
     @app.route("/")
-    def index(sesion=0):
-        productos = [{"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}, {"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}]
-        return render_template('blog/Inicio.html', usuario_logeado=sesion, productos=productos)
+    def index(sesion=0):   
+        return render_template('blog/Inicio.html', usuario_logeado=sesion, productos=mostrar_productos())
 
     @app.route("/carrito")
     def cart():
