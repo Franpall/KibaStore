@@ -75,12 +75,25 @@ def create_app(test_config=None):
         if request.method == 'POST':
             usuario = request.form['username']
             contraseña = request.form['password']
-            print(usuario, contraseña) #aca están los datos recibidos bro
 
             registrar_cliente(usuario, contraseña, 1)
             mensaje = "Cuenta Creada Con Éxito, ahora Inicia Sesión"
             return render_template('auth/login.html', mensaje = mensaje)
-        
+
+    # Lógica para agregar productos
+    @app.route('/obtener_info_producto', methods=('GET', 'POST'))
+    def obtener_info_producto():
+        if request.method == 'POST':
+            marca = request.form['marca']
+            modelo = request.form['modelo']
+            precio = request.form['precio']
+            imagen = request.form['imagen']
+            desc = request.form['desc']
+            stock = request.form['stock']
+
+            agregar_producto(marca, modelo, precio, imagen, desc, stock)
+            mensaje = "Producto agregado con exito :v"
+            return render_template('blog/productosView.html', mensaje = mensaje)
 
     @app.route("/productos_admin")
     def formProductos():
