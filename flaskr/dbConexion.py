@@ -10,6 +10,14 @@ def agregar_producto(marca, modelo, precio, imagen, descripcion, stock):
     conn.commit()
     conn.close()
 
+def mostrar_productos():
+    conn = sqlite3.connect('flaskr/KibaStore.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM productos ORDER BY precio DESC LIMIT 8')
+    productos = cursor.fetchall()
+    conn.close()
+    return productos
+
 def eliminar_producto(id_producto):
     conn = sqlite3.connect('flaskr/KibaStore.db')
     cursor = conn.cursor()
