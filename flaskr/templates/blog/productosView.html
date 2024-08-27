@@ -15,17 +15,32 @@
     </header>
 
     <main>
+        {% if mensaje %}
+        <div id="notificacion">
+            <p>{{ mensaje }}</p>
+        </div>
+        {% endif %}
+
         <h2 class="titulo_Formulario">Nuevo Producto</h2>
-    <form>
+    <form action="{{ url_for('obtener_info_producto') }}" method="post">
 
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre">
+        <label for="Marca">Marca:</label>
+        <input type="text" id="nombre" name="marca">
 
-        <label for="nombre">Precio:</label>
+        <label for="Modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo">
+
+        <label for="Precio">Precio:</label>
         <input type="text" id="precio" name="precio">
 
-        <label for="nombre">Cantidad Disponeble:</label>
-        <input type="text" id="can_dispo" name="can_dispo">
+        <label for="Imagen">Imagen:</label>
+        <input type="text" id="imagen" name="imagen">
+
+        <label for="Desc">Descripcion:</label>
+        <input type="text" id="desc" name="desc">
+
+        <label for="Stock">Stock:</label>
+        <input type="text" id="stock" name="stock">
 
         <button class="btn_formulario" type="submit">Agregar Producto</button>
         <a class="btn_cancelar_form" href="{{ url_for('index') }}">Cancelar</a>
