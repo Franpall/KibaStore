@@ -53,9 +53,9 @@
                         {% else %}
                             <p class="stock"> Quedan {{ producto[6]}}</p>
                             {% if usuario_logeado %}
-                            <a class="btn_comprar" href="{{ url_for('iniciarSesion') }}">Agregar al carrito</a>
-                            {% else %}
                             <a class="btn_comprar" href="{{ url_for('addToCart', id_producto=producto[0]) }}">Agregar al carrito</a>
+                            {% else %}
+                            <a class="btn_comprar" href="{{ url_for('iniciarSesion') }}">Agregar al carrito</a>
                             {% endif %}
                         {% endif %}
                     </div>
@@ -80,9 +80,9 @@
                         {% else %}
                             <p class="stock"> Quedan {{ producto[6]}}</p>
                             {% if usuario_logeado %}
-                            <a class="btn_comprar" href="{{ url_for('iniciarSesion') }}">Agregar al carrito</a>
-                            {% else %}
                             <a class="btn_comprar" href="{{ url_for('addToCart', id_producto=producto[0]) }}">Agregar al carrito</a>
+                            {% else %}
+                            <a class="btn_comprar" href="{{ url_for('iniciarSesion') }}">Agregar al carrito</a>
                             {% endif %}
                         {% endif %}
                     </div>

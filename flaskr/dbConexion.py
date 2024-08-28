@@ -18,6 +18,14 @@ def mostrar_productos():
     conn.close()
     return productos
 
+def mostrar_producto(id_producto):
+    conn = sqlite3.connect('flaskr/KibaStore.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM productos WHERE id_producto = ?', (id_producto,))
+    producto = cursor.fetchone()
+    conn.close()
+    return producto
+
 def eliminar_producto(id_producto):
     conn = sqlite3.connect('flaskr/KibaStore.db')
     cursor = conn.cursor()

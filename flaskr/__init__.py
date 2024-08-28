@@ -25,6 +25,9 @@ def create_app(test_config=None):
     except OSError:
         pass
 
+    # [id_producto, marca, modelo, precio, imagen, descripcion, cantidad]
+    compra = []
+
     app = Flask(__name__)
 
     @app.route("/")
@@ -34,8 +37,8 @@ def create_app(test_config=None):
     @app.route("/carrito")
     def cart():
         usuario_logeado = True
-        productos = [{"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}, {"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}]
-        return render_template('blog/carrito.html', usuario_logeado=usuario_logeado, items=productos)
+        # productos = [{"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}, {"nombre":"xiaomi mi 10", "precio":"1000","cantidad":"2"},{"nombre":"xiaomi retmi 49", "precio":"600","cantidad":"2"},{"nombre":"poco x5 pro", "precio":"200","cantidad":"2"}]
+        return render_template('blog/carrito.html', usuario_logeado=usuario_logeado, items=compra)
 
     @app.route("/login")
     def iniciarSesion():
@@ -106,11 +109,15 @@ def create_app(test_config=None):
         sesion = True
         return index(sesion)
     
+
+    
     @app.route("/add/<int:id_producto>")
     def addToCart(id_producto):
-        mensaje = reducir_stock(int(id_producto))
+        mensaje = reducir_stock(id_producto)
+        producto = mostrar_producto(id_producto)
+        compra.append(producto)
+        print("logrado")
         return index(True, mensaje = mensaje)
-        
 
     if __name__ == '__main__':
         app.run(debug=True)

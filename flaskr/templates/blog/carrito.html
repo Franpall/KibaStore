@@ -30,13 +30,13 @@
                 {% for item in items %}
                 <div class="item">
                     <div class="area_imagen">
-                    <img src="{{ url_for('static', filename='img_productos/redmi10.png') }}" alt="">
+                    <img src="{{ item[4] }}" alt="">
                     <button class="btn_verMas"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
                     </div>
                     <div class="area_datos">
-                        <h3>{{ item["nombre"] }}</h3>
-                        <p class="precio">{{ item["precio"] }}</p>
-                        <p class="cantidad">{{ item["cantidad"] }}</p>
+                        <h3>{{ item[1] + " " + item[2] }}</h3>
+                        <p class="precio">{{ item[3] }}</p>
+                        <!-- <p class="cantidad">{{ item[6] }}</p> -->
                         <button class="btn_eliminar">Eliminar</button>
                     </div>
                 </div>
