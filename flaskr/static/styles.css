@@ -18,7 +18,7 @@
 } */
 
 :root{
-    --fondo:#e2fff6;
+    --fondo:#ffffff;
     --tarjeta:#F2FFFC;
     --acento:#018C26;
     --boton:#099F50;
@@ -177,7 +177,7 @@ h2{
     gap: 5px;
     width: 250px;
     background-color: var(--tarjeta);
-    border-radius: 20px;
+    border-radius: 8px;
     padding: 10px 0;
     box-shadow: black 1px 1px 5px;
     color: var(--texto);
