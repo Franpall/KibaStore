@@ -30,21 +30,35 @@
         {% endif %}
     </header>
     <main>
+        {% if mensaje %}
+        <div id="notificacion">
+            <p>{{ mensaje }}</p>
+        </div>
+        {% endif %}
         <article id="area_destacada">
             <h2>¡Ofertas de la Semana!</h2>
             <section id="seccion_productos">
                 {% for producto in productos %}
                     {% if producto[3] < 100 %} 
-                <div class="producto">
-                    <div class="area_imagen">
-                    <img src="{{ producto[4] }}" alt="">
-                    <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
+                    <div class="producto">
+                        <div class="area_imagen">
+                        <img src="{{ producto[4] }}" alt="">
+                        <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
+                        </div>
+                        <h3>{{ producto[1] + " " + producto[2] }}</h3>
+                        <p class="precio">{{ producto[3] }}</p>
+                        {% if producto[6] < 1 %}
+                            <p class="stock"> Proximamente</p>
+                            <a class="btn_agotado">AGOTADO :[</a>
+                        {% else %}
+                            <p class="stock"> Quedan {{ producto[6]}}</p>
+                            {% if usuario_logeado %}
+                            <a class="btn_comprar" href="{{ url_for('iniciarSesion') }}">Agregar al carrito</a>
+                            {% else %}
+                            <a class="btn_comprar" href="{{ url_for('addToCart', id_producto=producto[0]) }}">Agregar al carrito</a>
+                            {% endif %}
+                        {% endif %}
                     </div>
-                    <h3>{{ producto[1] + " " + producto[2] }}</h3>
-                    <p class="precio">{{ producto[3] }}</p>
-                    <p class="stock"> Quedan {{ producto[6]}}</p>
-                    <button class="btn_comprar">Agregar al carrito</button>
-                </div>
                     {% endif %}
                 {% endfor %}
             </section>
@@ -53,16 +67,25 @@
             <h2>¡Todos los Modelos!</h2>
             <section id="seccion_productos">
                 {% for producto in productos %}
-                <div class="producto">
-                    <div class="area_imagen">
-                    <img src="{{ producto[4] }}" alt="">
-                    <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
+                    <div class="producto">
+                        <div class="area_imagen">
+                        <img src="{{ producto[4] }}" alt="">
+                        <button class="boton"><img src="{{ url_for('static', filename='iconos/masInfo.svg') }}" alt="+"></button>
+                        </div>
+                        <h3>{{ producto[1] + " " + producto[2] }}</h3>
+                        <p class="precio">{{ producto[3] }}</p>
+                        {% if producto[6] < 1 %}
+                            <p class="stock"> Proximamente</p>
+                            <a class="btn_agotado">AGOTADO :[</a>
+                        {% else %}
+                            <p class="stock"> Quedan {{ producto[6]}}</p>
+                            {% if usuario_logeado %}
+                            <a class="btn_comprar" href="{{ url_for('iniciarSesion') }}">Agregar al carrito</a>
+                            {% else %}
+                            <a class="btn_comprar" href="{{ url_for('addToCart', id_producto=producto[0]) }}">Agregar al carrito</a>
+                            {% endif %}
+                        {% endif %}
                     </div>
-                    <h3>{{ producto[1] + " " + producto[2] }}</h3>
-                    <p class="precio">{{ producto[3] }}</p>
-                    <p class="stock"> Quedan {{ producto[6]}}</p>
-                    <button class="btn_comprar">Agregar al carrito</button>
-                </div>
                 {% endfor %}
             </section>
         </article>

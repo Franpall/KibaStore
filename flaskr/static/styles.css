@@ -133,6 +133,17 @@ h1{
     cursor: pointer;
 }
 
+.btn_agotado{
+    background-color:rgb(94, 22, 22);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+    padding: 5px 10px;
+    border: solid 1px white;    
+    text-decoration: none;   
+}
+
 
 /* Area de main */
 main{

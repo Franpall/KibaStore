@@ -34,22 +34,22 @@
         <form id="form_ui" action="{{ url_for('obtener_info_producto') }}" method="post">
 
             <label for="Marca">Marca:</label>
-            <input type="text" id="nombre" name="marca" required>
+            <input type="text" id="nombre" name="marca">
 
             <label for="Modelo">Modelo:</label>
-            <input type="text" id="modelo" name="modelo" required>
+            <input type="text" id="modelo" name="modelo">
 
             <label for="Precio">Precio:</label>
-            <input type="text" id="precio" name="precio" required>
+            <input type="text" id="precio" name="precio">
 
             <label for="Imagen">URL de Imagen:</label>
-            <input type="text" id="imagen" name="imagen" required>
+            <input type="text" id="imagen" name="imagen">
 
             <label for="Desc">Descripcion:</label>
-            <input type="text" id="desc" name="desc" required>
+            <input type="text" id="desc" name="desc">
 
             <label for="Stock">Stock:</label>
-            <input type="text" id="stock" name="stock" required>
+            <input type="text" id="stock" name="stock">
 
             <a class="btn_cancelar_form" href="{{ url_for('index') }}">Cancelar</a>
             <button class="boton" type="submit">Agregar Producto</button>

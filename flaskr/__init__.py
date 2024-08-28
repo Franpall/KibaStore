@@ -28,8 +28,8 @@ def create_app(test_config=None):
     app = Flask(__name__)
 
     @app.route("/")
-    def index(sesion=0):   
-        return render_template('blog/Inicio.html', usuario_logeado=sesion, productos=mostrar_productos())
+    def index(sesion=False, mensaje=False):   
+        return render_template('blog/Inicio.html', usuario_logeado=sesion, productos=mostrar_productos(), mensaje = mensaje)
 
     @app.route("/carrito")
     def cart():
@@ -100,6 +100,17 @@ def create_app(test_config=None):
     def cerrarSesion():
         sesion = False
         return index(sesion)
+    
+    @app.route("/back")
+    def regresar():
+        sesion = True
+        return index(sesion)
+    
+    @app.route("/add/<int:id_producto>")
+    def addToCart(id_producto):
+        mensaje = reducir_stock(int(id_producto))
+        return index(True, mensaje = mensaje)
+        
 
     if __name__ == '__main__':
         app.run(debug=True)

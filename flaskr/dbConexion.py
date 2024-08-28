@@ -28,6 +28,20 @@ def eliminar_producto(id_producto):
     conn.commit()
     conn.close()
 
+def reducir_stock(id_producto):
+    conn = sqlite3.connect('flaskr/KibaStore.db')
+    cursor = conn.cursor()
+    cursor.execute('SELECT stock FROM productos WHERE id_producto=?', (id_producto,))
+    stock = cursor.fetchone()
+    if stock[0] > 0:
+        cursor.execute('UPDATE productos SET stock = stock - 1 WHERE id_producto = ?', (id_producto,))
+        conn.commit()
+        conn.close()
+        return "Se agregó al Carrito :]"
+    else:
+        return "Alguien compró antes que tú y se agotó :[ "
+    
+
 # Area de Login
 def iniciar_sesionBD(usuario, contraseña):
     conn = sqlite3.connect('flaskr/KibaStore.db')
