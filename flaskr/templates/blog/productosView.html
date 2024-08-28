@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>KibaStore</title>
-    <link rel="stylesheet" href="static/styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KibaStore</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap" rel="stylesheet">
+        <!-- separacion de fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    </head>
 
 <body>
-
     <header>
         <h1>KibaStore</h1>
-        <div>
-            <a class="btn_comprar" href="{{ url_for('index') }}" >Inicio</a>
+        <div class="right_header">
+          <a class="btn_login" href="{{ url_for('index') }}">Inicio</a>
         </div>
     </header>
 
@@ -21,30 +29,33 @@
         </div>
         {% endif %}
 
+    <div id="inicioSesion">
         <h2 class="titulo_Formulario">Nuevo Producto</h2>
-    <form action="{{ url_for('obtener_info_producto') }}" method="post">
+        <form id="form_ui" action="{{ url_for('obtener_info_producto') }}" method="post">
 
-        <label for="Marca">Marca:</label>
-        <input type="text" id="nombre" name="marca">
+            <label for="Marca">Marca:</label>
+            <input type="text" id="nombre" name="marca">
 
-        <label for="Modelo">Modelo:</label>
-        <input type="text" id="modelo" name="modelo">
+            <label for="Modelo">Modelo:</label>
+            <input type="text" id="modelo" name="modelo">
 
-        <label for="Precio">Precio:</label>
-        <input type="text" id="precio" name="precio">
+            <label for="Precio">Precio:</label>
+            <input type="text" id="precio" name="precio">
 
-        <label for="Imagen">Imagen:</label>
-        <input type="text" id="imagen" name="imagen">
+            <label for="Imagen">URL de Imagen:</label>
+            <input type="text" id="imagen" name="imagen">
 
-        <label for="Desc">Descripcion:</label>
-        <input type="text" id="desc" name="desc">
+            <label for="Desc">Descripcion:</label>
+            <input type="text" id="desc" name="desc">
 
-        <label for="Stock">Stock:</label>
-        <input type="text" id="stock" name="stock">
+            <label for="Stock">Stock:</label>
+            <input type="text" id="stock" name="stock">
 
-        <button class="btn_formulario" type="submit">Agregar Producto</button>
-        <a class="btn_cancelar_form" href="{{ url_for('index') }}">Cancelar</a>
-    </form>
+            <a class="btn_cancelar_form" href="{{ url_for('index') }}">Cancelar</a>
+            <button class="boton" type="submit">Agregar Producto</button>
+           
+        </form>
+    </div>
 
     </main>
     <footer>

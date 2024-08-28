@@ -224,6 +224,14 @@ h2{
     content: "$";
 }
 
+.stock{
+    font-size: 0.9rem;
+    color: rgb(185, 39, 39);
+    box-shadow: 1px 1px 6px black;
+    border-radius: 5px;
+    padding: 0 2px;
+}
+
 /* area general */
 
 #area_general{
@@ -419,28 +427,6 @@ main{
     font-size: 1.2rem;
 }
 
-.titulo_Formulario{
-    font-weight: 600;
-    margin: 3%;
-    padding: auto;
-    text-align: center;
-}
-
-.btn_formulario{
-    color: white;
-    background-color: var(--boton);
-    border-radius: 20px;
-    padding: 10px 25px;
-    border: 2px solid white;
-}
-
-.btn_formulario:hover{
-    background-color: var(--botonHover);
-    cursor: pointer;    
-}
-
-
-
 
 label{
     font-weight: 700;
@@ -448,6 +434,34 @@ label{
 
 .btn_cancelar_form{
     text-decoration: none;
+}
+
+#form_ui{
+    max-width:500px;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+}
+
+#form_ui label{
+    height: 50px;
+    display: flex;
+    align-items:center;
+    justify-content: end;
+    width: calc(100% - 300px);
+}
+
+#form_ui input{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 250px;
+    height: 20px;
+    margin-top: 10px;
 }
 
 /* Estilo de la notificación (pop-up) */
