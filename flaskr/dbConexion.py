@@ -13,7 +13,7 @@ def agregar_producto(marca, modelo, precio, imagen, descripcion, stock):
 def mostrar_productos():
     conn = sqlite3.connect('flaskr/KibaStore.db')
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM productos ORDER BY precio DESC LIMIT 8')
+    cursor.execute('SELECT * FROM productos ORDER BY precio DESC LIMIT 50')
     productos = cursor.fetchall()
     conn.close()
     return productos
@@ -49,3 +49,5 @@ def registrar_cliente(usuario, contraseña, rol):
     )
     conn.commit()
     conn.close()
+
+eliminar_producto(44)
