@@ -61,5 +61,3 @@ def registrar_cliente(usuario, contraseña, rol):
     )
     conn.commit()
     conn.close()
-
-eliminar_producto(44)
