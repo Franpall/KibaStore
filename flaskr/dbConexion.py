@@ -26,16 +26,6 @@ def mostrar_producto(id_producto):
     conn.close()
     return producto
 
-def eliminar_producto(id_producto):
-    conn = sqlite3.connect('flaskr/KibaStore.db')
-    cursor = conn.cursor()
-    cursor.execute(
-        'DELETE FROM productos WHERE id_producto = ?',
-        (id_producto,)
-    )
-    conn.commit()
-    conn.close()
-
 def reducir_stock(id_producto):
     conn = sqlite3.connect('flaskr/KibaStore.db')
     cursor = conn.cursor()
